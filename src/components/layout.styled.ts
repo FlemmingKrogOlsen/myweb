@@ -19,7 +19,7 @@ export const Main = styled.main`
 
 export const Content = styled.div`
   font-size: 1.5rem;
-  padding: 20px;
+  /* padding: 20px; */
   box-shadow: inset 0px 5px 10px rgba(0, 0, 0, 0.65);
   height: calc(100% - 150px);
   background: ${({ theme }) => theme.bg};
@@ -28,7 +28,6 @@ export const Content = styled.div`
   overflow: auto;
   margin-bottom: 1.5rem;
   height: calc(100% - 166px); /* height of header + footer + 3*gap */
-
   &::-webkit-scrollbar {
     width: 20px;
   }

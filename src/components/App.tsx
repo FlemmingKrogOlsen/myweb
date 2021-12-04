@@ -27,14 +27,14 @@ export default function App() {
             <MenuItem>About</MenuItem>
           </NavLink>
 
-          <NavLink
+          {/* <NavLink
             style={({ isActive }) => ({
               color: isActive ? "white" : "gray",
             })}
             to="/blog"
           >
             <MenuItem>Blog</MenuItem>
-          </NavLink>
+          </NavLink> */}
         </MenuSection>
         <MenuSection>
           <a
@@ -74,11 +74,6 @@ export default function App() {
           </Content>
           <Footer>
             <div>#OPENTOWORK #REMOTE</div>
-            <div>
-              <a href="mailto:flemming@krogolsen.dk?subject=Please send me your CV">
-                Request my CV
-              </a>
-            </div>
           </Footer>
         </Main>
       </Page>

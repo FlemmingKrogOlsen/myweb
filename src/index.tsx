@@ -7,7 +7,7 @@ import "./theme/index.css";
 import { theme } from "./theme";
 
 import App from "./components/App";
-import Home from "./pages/home";
+import About from "./pages/about";
 import Blog from "./pages/blog";
 import CV from "./pages/cv";
 import Error404 from "./pages/error404";
@@ -18,7 +18,7 @@ ReactDOM.render(
       <BrowserRouter>
         <Routes>
           <Route element={<App />}>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<About />} />
             <Route path="blog" element={<Blog />} />
             <Route path="cv" element={<CV />} />
             <Route path="*" element={<Error404 />} />

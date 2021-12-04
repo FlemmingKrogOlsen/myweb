@@ -79,6 +79,7 @@ const Page = styled.div`
   flex: 1;
   margin-left: ${({ theme }) => theme.config.menuItemGap}px;
   ${ElementDepth3d};
+  cursor: default;
 `;
 
 export { Container, Menu, MenuSection, Page, MenuItem };
