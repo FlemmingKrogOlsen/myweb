@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const SVG = styled.svg`
-  fill: gray;
+  fill: ${({ theme }) => theme.svg.color};
   transform: scale(0.75);
 `;
 

@@ -4,8 +4,8 @@ export const Header = styled.header`
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
-  background: #dedede;
-  color: #123456;
+  background: ${({ theme }) => theme.bg};
+  color: ${({ theme }) => theme.primary};
   padding: 10px;
   border-radius: 10px;
   box-shadow: inset 0px 5px 10px rgba(0, 0, 0, 0.65);
@@ -22,8 +22,8 @@ export const Content = styled.div`
   padding: 20px;
   box-shadow: inset 0px 5px 10px rgba(0, 0, 0, 0.65);
   height: calc(100% - 150px);
-  background: #dedede;
-  color: #123456;
+  background: ${({ theme }) => theme.bg};
+  color: ${({ theme }) => theme.primary};
   border-radius: 10px;
   overflow: auto;
   margin-bottom: 1.5rem;
@@ -34,7 +34,7 @@ export const Content = styled.div`
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: rgba(59, 88, 117, 0.5);
+    background-color: ${({ theme }) => theme.primaryFade};
     border-radius: 10px;
     border: 1px solid transparent; // fix scroll graphical glitch (does not happen in plain css)
   }
@@ -43,8 +43,8 @@ export const Content = styled.div`
 export const Footer = styled.footer`
   padding: 10px;
   box-shadow: inset 0px 5px 10px rgba(0, 0, 0, 0.65);
-  background: #dedede;
-  color: #123456;
+  background: ${({ theme }) => theme.bg};
+  color: ${({ theme }) => theme.primary};
   text-align: center;
   border-radius: 10px;
   display: flex;
@@ -52,6 +52,6 @@ export const Footer = styled.footer`
   align-items: center;
   height: 59px;
   a {
-    color: #123456;
+    color: ${({ theme }) => theme.primary};
   }
 `;

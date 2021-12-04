@@ -1,12 +1,6 @@
 import styled, { css } from "styled-components";
 
 const conpensate_for_skew = 110;
-const menuItemGap = 10;
-const menuItemDepth3d = 15;
-const menuItemSize = 100;
-
-const primary = "#123456";
-const primaryFade = "rgba(59, 88, 117, 1)";
 
 const Container = styled.div`
   max-width: 1000px;
@@ -27,20 +21,24 @@ const MenuSection = styled.div`
   display: flex;
   flex-direction: column-reverse;
   align-items: flex-end;
-  gap: ${menuItemGap}px;
+  gap: ${({ theme }) => theme.config.menuItemGap}px;
 `;
 
 const ElementDepth3d = css`
   position: relative;
-  background: linear-gradient(45deg, ${primary} 0%, ${primaryFade} 100%);
+  background: linear-gradient(
+    45deg,
+    ${({ theme }) => theme.primary} 0%,
+    ${({ theme }) => theme.primaryFade} 100%
+  );
   cursor: pointer;
   &::before {
     content: "";
     position: absolute;
-    top: ${menuItemDepth3d * -1}px;
+    top: -${({ theme }) => theme.config.menuItemDepth3d}px;
     left: 0;
     width: 100%;
-    height: ${menuItemDepth3d}px;
+    height: ${({ theme }) => theme.config.menuItemDepth3d}px;
     background: lightgray;
     transform-origin: bottom;
     transform: skewX(45deg);
@@ -49,10 +47,10 @@ const ElementDepth3d = css`
   &::after {
     content: "";
     position: absolute;
-    top: ${menuItemDepth3d * -1}px;
-    left: ${menuItemDepth3d * -1}px;
+    top: -${({ theme }) => theme.config.menuItemDepth3d}px;
+    left: -${({ theme }) => theme.config.menuItemDepth3d}px;
     height: 100%;
-    width: ${menuItemDepth3d}px;
+    width: ${({ theme }) => theme.config.menuItemDepth3d}px;
     background: gray;
     transform-origin: left;
     transform: skewY(45deg);
@@ -61,7 +59,7 @@ const ElementDepth3d = css`
 `;
 
 const MenuItem = styled.div`
-  width: ${menuItemSize}px;
+  width: ${({ theme }) => theme.config.menuItemSize}px;
   aspect-ratio: 1/1;
   display: flex;
   justify-content: center;
@@ -69,8 +67,8 @@ const MenuItem = styled.div`
   transition: transform 0.25s ease-in-out;
   ${ElementDepth3d};
   &:hover > svg {
-    fill: white;
-    filter: drop-shadow(0px 0px 5px white);
+    fill: ${({ theme }) => theme.svg.hover};
+    filter: drop-shadow(0px 0px 5px ${({ theme }) => theme.svg.hover});
   }
   &:hover {
     transform: translateX(-10px);
@@ -79,7 +77,7 @@ const MenuItem = styled.div`
 
 const Page = styled.div`
   flex: 1;
-  margin-left: ${menuItemGap}px;
+  margin-left: ${({ theme }) => theme.config.menuItemGap}px;
   ${ElementDepth3d};
 `;
 
