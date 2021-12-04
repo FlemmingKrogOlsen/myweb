@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components';
 
 import './index.css';
 
-import App from './App'
+import App from './components/App'
 
 import Home from './routes/home';
 import Blog from './routes/blog';

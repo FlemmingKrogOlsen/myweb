@@ -2,7 +2,7 @@ import { NavLink, Outlet } from "react-router-dom";
 
 import { Container, Menu, MenuSection, Page, MenuItem } from "./App.styled";
 import { Main, Header, Content, Footer } from "./layout.styled";
-import { LinkedInIcon, GithubIcon, EmailIcon } from "./svgIcons";
+import { LinkedInIcon, GithubIcon, EmailIcon } from "./SVGIcons";
 
 export default function App() {
   return (
