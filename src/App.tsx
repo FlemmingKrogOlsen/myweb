@@ -1,23 +1,87 @@
 import { NavLink, Outlet } from "react-router-dom";
 
+import { Container, Menu, MenuSection, Page, MenuItem } from "./App.styled";
+import { Main, Header, Content, Footer } from "./layout.styled";
+import { LinkedInIcon, GithubIcon, EmailIcon } from "./svgIcons";
+
 export default function App() {
   return (
-    <div>
-      <h1>Invoices</h1>
-      <nav
-        style={{
-          borderBottom: "solid 1px",
-          paddingBottom: "1rem"
-        }}
-      >
-        <NavLink style={({ isActive }) => ({
-          color: isActive ? "red" : "gray",
-        })} to="/about">About</NavLink> |{" "}
-        <NavLink style={({ isActive }) => ({
-          color: isActive ? "red" : "gray",
-        })} to="/invoices">Invoices</NavLink>
-      </nav>
-      <Outlet />
-    </div>
+    <Container>
+      <Menu>
+        <MenuSection>
+          <NavLink
+            style={({ isActive }) => ({
+              color: isActive ? "white" : "gray",
+            })}
+            to="/cv"
+          >
+            <MenuItem>CV</MenuItem>
+          </NavLink>
+
+          <NavLink
+            style={({ isActive }) => ({
+              color: isActive ? "white" : "gray",
+            })}
+            to="/"
+          >
+            <MenuItem>About</MenuItem>
+          </NavLink>
+
+          <NavLink
+            style={({ isActive }) => ({
+              color: isActive ? "white" : "gray",
+            })}
+            to="/blog"
+          >
+            <MenuItem>Blog</MenuItem>
+          </NavLink>
+        </MenuSection>
+        <MenuSection>
+          <a
+            href="https://www.linkedin.com/in/flemmingkrogolsen/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <MenuItem>
+              <LinkedInIcon />
+            </MenuItem>
+          </a>
+          <a
+            href="https://github.com/FlemmingKrogOlsen"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <MenuItem>
+              <GithubIcon />
+            </MenuItem>
+          </a>
+          <a
+            href="mailto:flemming@krogolsen.dk"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <MenuItem>
+              <EmailIcon />
+            </MenuItem>
+          </a>
+        </MenuSection>
+      </Menu>
+      <Page>
+        <Main>
+          <Header>flemming.krogolsen.dk</Header>
+          <Content>
+            <Outlet />
+          </Content>
+          <Footer>
+            <div>#OPENTOWORK #REMOTE</div>
+            <div>
+              <a href="mailto:flemming@krogolsen.dk?subject=Please send me your CV">
+                Request my CV
+              </a>
+            </div>
+          </Footer>
+        </Main>
+      </Page>
+    </Container>
   );
 }

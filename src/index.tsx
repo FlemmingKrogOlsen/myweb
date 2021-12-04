@@ -4,12 +4,12 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from 'styled-components';
 
 import './index.css';
-import reportWebVitals from './reportWebVitals';
 
 import App from './App'
-import About from './routes/about';
-import Invoices from './routes/invoices';
-import Invoice from './routes/invoice';
+
+import Home from './routes/home';
+import Blog from './routes/blog';
+import CV from './routes/cv';
 
 export const theme = {
   main: "#123456",
@@ -22,19 +22,11 @@ ReactDOM.render(
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<App />}>
-            <Route path="about" element={<About />} />
-            <Route path="invoices" element={<Invoices />}>
-              <Route
-                index
-                element={
-                  <main style={{ padding: "1rem" }}>
-                    <p>Select an invoice</p>
-                  </main>
-                }
-              />
-              <Route path=":invoiceId" element={<Invoice />} />
-            </Route>
+          <Route element={<App />}>
+            <Route path="/" element={<Home />} />
+            <Route path="blog" element={<Blog />} />
+            <Route path="cv" element={<CV />} />
+
             <Route
               path="*"
               element={
@@ -50,8 +42,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
