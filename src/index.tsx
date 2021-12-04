@@ -1,15 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from "styled-components";
 
-import './index.css';
+import "./index.css";
 
-import App from './components/App'
+import App from "./components/App";
 
-import Home from './routes/home';
-import Blog from './routes/blog';
-import CV from './routes/cv';
+import Home from "./routes/home";
+import Blog from "./routes/blog";
+import CV from "./routes/cv";
+import Error404 from "./routes/error404";
 
 export const theme = {
   main: "#123456",
@@ -26,19 +27,11 @@ ReactDOM.render(
             <Route path="/" element={<Home />} />
             <Route path="blog" element={<Blog />} />
             <Route path="cv" element={<CV />} />
-
-            <Route
-              path="*"
-              element={
-                <main style={{ padding: "1rem" }}>
-                  <p>404 Page not found</p>
-                </main>
-              }
-            />
+            <Route path="*" element={<Error404 />} />
           </Route>
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
