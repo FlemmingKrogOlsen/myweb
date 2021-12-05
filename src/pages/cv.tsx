@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const ButtonLink = styled.a`
   position: absolute;
-  top: 97px;
+  top: 105px;
   right: -75px;
   color: ${(props) => props.theme.primary};
   font-size: 0.75rem;
@@ -19,6 +19,7 @@ const Container = styled.div`
   display: flex;
   height: 100%;
   position: relative;
+  
 `;
 
 const Page = styled.div`
@@ -28,7 +29,8 @@ const Page = styled.div`
   aspect-ratio: 1/1.4142; // aspect ratio of A4 Paper
   box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
   transform-origin: top;
-  transform: scale(0.6);
+  transform: scale(0.9);
+
 `;
 
 const IFrame = styled.iframe`
@@ -37,6 +39,7 @@ const IFrame = styled.iframe`
   overflow: hidden;
   border: none;
   pointer-events: none;
+  
 `;
 
 export default function CV() {
