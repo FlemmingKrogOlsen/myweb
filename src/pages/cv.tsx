@@ -1,4 +1,6 @@
+import { useState } from "react";
 import styled from "styled-components";
+import Spinner from "../components/Spinner";
 
 const ButtonLink = styled.a`
   position: absolute;
@@ -42,7 +44,14 @@ const IFrame = styled.iframe`
   
 `;
 
+const CenterDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 50%;
+`;
+
 export default function CV() {
+  const [isLoading, setIsLoading] = useState(true);
   return (
     <>
       <Container>
@@ -54,7 +63,12 @@ export default function CV() {
           Click for Print-/Readable Version
         </ButtonLink>
         <Page>
-          <IFrame scrolling="no" src="https://cv.krogolsen.dk/"></IFrame>
+        {isLoading ? (
+          <CenterDiv>
+          <Spinner color="#123456" scale={2} />
+          </CenterDiv>
+        ) : null}
+          <IFrame scrolling="no" src="https://cv.krogolsen.dk/" onLoad={() => setIsLoading(false)}></IFrame>
         </Page>
       </Container>
     </>
