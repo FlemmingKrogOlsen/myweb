@@ -1,11 +1,23 @@
 import { NavLink, Outlet } from "react-router-dom";
+import styled from "styled-components";
 
 import { Container, Menu, MenuSection, Page, MenuItem } from "./App.styled";
 import { Main, Header, Content, Footer } from "./layout.styled";
 import { LinkedInIcon, GithubIcon, EmailIcon } from "./SVGIcons";
 
+const Dude = styled.img`
+position: absolute;
+bottom: 0px;
+width: 100px;
+right: 0px;
+
+`;
+
 export default function App() {
   return (
+    <>
+            <Dude src="/SP-Studio.png" alt="SP-Studio Figure" title="sp-studio.de" />
+
     <Container>
       <Menu>
         <MenuSection>
@@ -78,5 +90,6 @@ export default function App() {
         </Main>
       </Page>
     </Container>
+    </>
   );
 }
